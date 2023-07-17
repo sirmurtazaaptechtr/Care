@@ -11,26 +11,27 @@ if(isset($_GET['type']) && $_GET['type'] != ''){
     }else{
       $status = 0;
     }
-    $update_status_sql = "update categories set status = '$status' where id = '$statusID'";
+    $update_status_sql = "update cities set status = '$status' where id = '$statusID'";
     mysqli_query($conn,$update_status_sql);
   }
   if($type == 'delete')
   {    
     $statusID = get_safe_value($conn,$_GET['id']);
-    $delete_sql = "delete from categories where id = '$statusID'";
+    $delete_sql = "delete from cities where id = '$statusID'";
     mysqli_query($conn,$delete_sql);
   }
 }
-$sql = 'SELECT * FROM categories ORDER BY `categories`';
+$sql = 'SELECT * FROM cities ORDER BY `Name`';
 $res = mysqli_query($conn, $sql);
 ?>
 <main id="main" class="main">
   <div class="pagetitle">
-    <h1>Categories</h1>
+    <h1>cities</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
-        <li class="breadcrumb-item">Categories</li>
+        <li class="breadcrumb-item"><a href="login.php">Admin</a></li>
+        <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</li>
+        <li class="breadcrumb-item">Cities</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -41,10 +42,10 @@ $res = mysqli_query($conn, $sql);
           <div class="card-body">
             <div class="row">
               <div class="col">
-                <h5 class="card-title">All Categories</h5>
+                <h5 class="card-title">All Cities</h5>
               </div>
               <div class="col text-end">
-                <a href="manage_categories.php" type="button" class="btn btn-sm btn-primary mt-3">+ Add Category</a>
+                <a href="manage_cities.php" type="button" class="btn btn-sm btn-primary mt-3">+ Add Category</a>
               </div>
             </div>
             <!-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p> -->
@@ -55,7 +56,7 @@ $res = mysqli_query($conn, $sql);
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">ID</th>
-                  <th scope="col">Categories</th>
+                  <th scope="col">Cities</th>
                   <th scope="col">Status</th>
                 </tr>
               </thead>
@@ -67,7 +68,7 @@ $res = mysqli_query($conn, $sql);
                   <tr>
                     <td><?php echo $srno; ?></td>
                     <td><?php echo $rows['id']; ?></td>
-                    <td><?php echo $rows['categories']; ?></td>                    
+                    <td><?php echo $rows['Name']; ?></td>                    
                     <td>
                       <?php 
                         if($rows['status'] == 1){

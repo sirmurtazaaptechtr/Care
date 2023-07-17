@@ -5,13 +5,13 @@ $msg = '';
 if (isset($_POST["loginBtn"])) {
   $username = get_safe_value($conn, $_POST["username"]);
   $password = get_safe_value($conn, $_POST["password"]);  
-  $sql = "SELECT * FROM `admin_user` WHERE username = '$username' AND password = '$password'";
+  $sql = "SELECT * FROM `login` WHERE Username = '$username' AND Password = '$password' AND Role_ID = 1";
   $res = mysqli_query($conn, $sql);
   $count = mysqli_num_rows($res);
   if ($count > 0) {
     $_SESSION['ADMIN_LOGIN'] = 'yes';
     $_SESSION['ADMIN_USERNAME'] = $username;
-    header('location:categories.php');
+    header('location:dashboard.php');
     die();
   } else {
     $msg = '
