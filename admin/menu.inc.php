@@ -284,16 +284,16 @@ if ($_SESSION['ADMIN_LOGIN'] != '' && isset($_SESSION['ADMIN_USERNAME'])) {
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="dashboard.php">
           <i class="bi bi-speedometer2"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="categories.php">
+        <a class="nav-link collapsed" href="cities.php">
           <i class="bi bi-grid"></i>
-          <span>Categories</span>
+          <span>Cities</span>
         </a>
       </li><!-- End Categories Nav -->
 

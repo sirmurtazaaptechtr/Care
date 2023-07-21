@@ -45,7 +45,7 @@ $res = mysqli_query($conn, $sql);
                 <h5 class="card-title">All Cities</h5>
               </div>
               <div class="col text-end">
-                <a href="manage_cities.php" type="button" class="btn btn-sm btn-primary mt-3">+ Add Category</a>
+                <a href="manage_cities.php" type="button" class="btn btn-sm btn-primary mt-3">+ Add City</a>
               </div>
             </div>
             <!-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p> -->
